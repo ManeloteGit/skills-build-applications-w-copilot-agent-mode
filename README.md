@@ -25,6 +25,60 @@ In this exercise, you will:
 1. Try other LLM models to see other output.
 1. For each step open up a new Copilot Chat session by hitting the plus `+` icon in the Copilot Chat pane.
 
+---
+
+## 🗄️ Oracle Database & SQL Developer Integration
+
+El proyecto incluye una **base de datos Oracle 21C** con el esquema **GYM_APP** y soporte completo para **SQL Developer**.
+
+### 📚 Documentación Rápida
+
+| Recurso | Descripción |
+|---------|-------------|
+| [QUICKSTART.md](oracle_db/QUICKSTART.md) | ⭐ **Guía rápida** con checklist de 10 pasos |
+| [STRUCTURE.md](oracle_db/STRUCTURE.md) | Estructura de archivos y diagrama visual |
+| [oracle_db/README.md](oracle_db/README.md) | Documentación técnica completa |
+| [.github/instructions/ORACLE_SQLDEVELOPER.instructions.md](.github/instructions/ORACLE_SQLDEVELOPER.instructions.md) | Instrucciones detalladas para SQL Developer |
+| [oracle_db/sql/queries_example.sql](oracle_db/sql/queries_example.sql) | Ejemplos de queries útiles |
+
+### 🚀 Inicio Rápido (3 min)
+
+```bash
+# 1. Descargar SQL Developer
+wget https://download.oracle.com/otn/java/sqldeveloper/sqldeveloper-23.1.0.087.1900-no-jdk.zip
+unzip sqldeveloper-23.1.0.087.1900-no-jdk.zip
+./sqldeveloper/sqldeveloper.sh
+
+# 2. En SQL Developer:
+# - Crear conexión SYSDBA (localhost:1521, ORCLCDB, sys)
+# - Ejecutar: oracle_db/sql/00_create_schema.sql
+# - Crear conexión GYM_APP (usuario: GYM_APP, password: gym_app_password)
+# - Ejecutar: oracle_db/sql/01_create_tables.sql
+# - Ejecutar: oracle_db/sql/02_create_procedures.sql
+```
+
+### 📁 Estructura Oracle
+
+```
+octofit-tracker/backend/
+├── .env (ORACLE_DB_USER=GYM_APP)
+└── octofit_tracker/settings.py (DATABASES config)
+
+oracle_db/
+├── QUICKSTART.md ⭐ Comienza aquí
+├── STRUCTURE.md
+├── README.md
+└── sql/
+    ├── 00_create_schema.sql (Crear GYM_APP)
+    ├── 01_create_tables.sql (6 tablas)
+    ├── 02_create_procedures.sql (4 procedimientos)
+    └── queries_example.sql (Ejemplos)
+```
+
+**Estatus:** ✅ Listo para usar
+
+---
+
 ### How to start this exercise
 
 Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.

@@ -1,0 +1,11 @@
+"""
+Activities App - Configuration for activity tracking
+"""
+
+from django.apps import AppConfig
+
+
+class ActivitiesConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'octofit_tracker.apps.activities'
+    verbose_name = 'Activity Tracking'
